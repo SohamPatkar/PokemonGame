@@ -17,6 +17,10 @@ int main()
     cout<<"So, choose wisely, young one!"<<endl;
     cout<<"Type B for Bulbasaur, C for Charmander and S for Squirtle"<<endl;
     cin >> _playerChoice;
+    cout<<"Well done, Trainer!"<<endl;
+    cout<<"But… wait, you think your journey ends with just choosing a Pokémon?"<<endl;
+    cout<<"No, no, no!"<<endl;
+    cout<<"You need to confirm your choice and see how the game reacts!"<<endl;
 
     if(_playerChoice == "b" || _playerChoice == "B")
     {
@@ -34,4 +38,11 @@ int main()
     {
         cout<<"Invalid choice. Please restart the game."<<endl;
     }
+
+    cout<<"Ah, an excellent choice!"<<endl;
+    cout<<"But beware, Trainer,"<<endl;
+    cout<<"this is only the beginning."<<endl;
+    cout<<"Your journey is about to unfold."<<endl;
+    cout<<"Now let’s see if you’ve got what it takes to keep going!"<<endl;
+    cout<<"Good luck, and remember… Choose wisely!"<<endl;
 }
