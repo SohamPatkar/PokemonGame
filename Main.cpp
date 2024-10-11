@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 
-string _playerName, _playerChoice;
+string _playerName, _chosenPokemon;
+int _playerChoice;
 
 int main()
 {
@@ -15,28 +16,35 @@ int main()
     cout<<"Today is a momentous day—you’ll be choosing your very first Pokémon."<<endl;
     cout<<"Every great Trainer remembers this moment for the rest of their lives."<<endl;
     cout<<"So, choose wisely, young one!"<<endl;
-    cout<<"Type B for Bulbasaur, C for Charmander and S for Squirtle"<<endl;
+    cout<<"Type 1 for Bulbasaur, 2 for Charmander and 3 for Squirtle"<<endl;
     cin >> _playerChoice;
     cout<<"Well done, Trainer!"<<endl;
     cout<<"But… wait, you think your journey ends with just choosing a Pokémon?"<<endl;
     cout<<"No, no, no!"<<endl;
     cout<<"You need to confirm your choice and see how the game reacts!"<<endl;
 
-    if(_playerChoice == "b" || _playerChoice == "B")
+    switch(_playerChoice)
     {
-        cout<<"You chose Bulbasaur! A wise choice."<<endl;
-    }
-    else if(_playerChoice == "c" || _playerChoice == "C")
-    {
-        cout<<"You chose Charmander! A fiery choice."<<endl;
-    }
-    else if(_playerChoice == "s" || _playerChoice == "S")
-    {
-        cout<<"You chose Squirtle! A cool choice."<<endl;
-    }
-    else
-    {
-        cout<<"Invalid choice. Please restart the game."<<endl;
+        case 1:
+        _chosenPokemon = "Bulbasaur";
+        cout<<"Well Bulbasaur, a nice choice"<<endl;
+        break;
+
+        case 2:
+        _chosenPokemon = "Charmander";
+        cout<<"Well Charmander, a fiery choice"<<endl;
+        break;
+
+        case 3:
+        _chosenPokemon = "Squirtle";
+        cout<<"Well Squirtle, a nice choice"<<endl;
+        break;
+
+        default:
+        cout<<"Well I guess you need help with choosing pokemon, okay I will help you..."<<endl;
+        _chosenPokemon = "Pikachu";
+        cout<<"Here it is Pikachu, as you didnt like the choices..."<<endl;
+        break;
     }
 
     cout<<"Ah, an excellent choice!"<<endl;
