@@ -10,7 +10,11 @@ int main()
     cout<<"Enter your name"<<endl;
     cin >> _playerName;
     cout<<"Great Start "<<_playerName<<" Looks like you’ve mastered the opening of every code adventure. Keep this up, and you’ll be a coding master in no time!"<<endl;
-    cout<<"Please choose a pokemon to Start"<<endl;
+    cout<<"Ah, Trainer!"<<endl;
+    cout<<"Welcome to the world of Pokémon!"<<endl;
+    cout<<"Today is a momentous day—you’ll be choosing your very first Pokémon."<<endl;
+    cout<<"Every great Trainer remembers this moment for the rest of their lives."<<endl;
+    cout<<"So, choose wisely, young one!"<<endl;
     cout<<"Type B for Bulbasaur, C for Charmander and S for Squirtle"<<endl;
     cin >> _playerChoice;
 
