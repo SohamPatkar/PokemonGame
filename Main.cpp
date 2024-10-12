@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
 
-string _playerName, _chosenPokemon;
+string _playerName, _chosenPokemon, _pokemonAttribute;
 int _playerChoice;
 
-enum PokemonChoice
+enum class PokemonChoice
 {
     Bulbasaur,
     Charmander,
@@ -12,9 +12,17 @@ enum PokemonChoice
     InvalidChoice
 };
 
+enum class PokemonType
+{
+    Grass,
+    Fire,
+    Water
+};
+
 int main()
 {
-    PokemonChoice chosen_pokemon = InvalidChoice;
+    PokemonChoice chosen_pokemon = PokemonChoice::InvalidChoice;
+    PokemonType _pokemonType;
 
     cout<<"Trainer! Before you embark on your journey, the Pokémon world needs to know who you are!"<<endl; 
     cout<<"Time to step up and tell us your name. And remember, a great name is the start of every great adventure!"<<endl;
@@ -36,23 +44,27 @@ int main()
     switch(_playerChoice)
     {
         case 1:
-        chosen_pokemon = Bulbasaur;
+        chosen_pokemon = PokemonChoice::Bulbasaur;
+        _pokemonType = PokemonType::Grass;
         cout<<"Well Bulbasaur, a nice choice"<<endl;
         break;
 
         case 2:
-        chosen_pokemon = Charmander;
+        chosen_pokemon = PokemonChoice::Charmander;
+        _pokemonType = PokemonType::Fire;
         cout<<"Well Charmander, a fiery choice"<<endl;
         break;
 
         case 3:
-        chosen_pokemon = Squirtle;
+        chosen_pokemon = PokemonChoice::Squirtle;
+        _pokemonType = PokemonType::Water;
         cout<<"Well Squirtle, a nice choice"<<endl;
         break;
 
         default:
         cout<<"Well I guess you need help with choosing pokemon, okay I will help you..."<<endl;
-        chosen_pokemon = InvalidChoice;
+        chosen_pokemon = PokemonChoice::InvalidChoice;
+        _pokemonType = PokemonType::Fire;
         cout<<"Here it is Pikachu, as you didnt like the choices..."<<endl;
         break;
     }
@@ -64,21 +76,25 @@ int main()
     cout<<"Now let’s see if you’ve got what it takes to keep going!"<<endl;
     cout<<"Good luck, and remember… Choose wisely!"<<endl;
 
-    if(chosen_pokemon == 0)
+    if(chosen_pokemon == PokemonChoice::Bulbasaur)
     {
         _chosenPokemon = "Bulbasaur";
+        _pokemonAttribute = "Grass";
     }
-    else if(chosen_pokemon == 1)
+    else if(chosen_pokemon == PokemonChoice::Charmander)
     {
         _chosenPokemon = "Charmander";
+        _pokemonAttribute = "Fire";
     }
-    else if(chosen_pokemon == 2)
+    else if(chosen_pokemon == PokemonChoice::Squirtle)
     {
         _chosenPokemon = "Squirtle";
+        _pokemonAttribute = "Water";
     }
-    else if(chosen_pokemon == 3)
+    else if(chosen_pokemon == PokemonChoice::InvalidChoice)
     {
         _chosenPokemon = "Charmander";
+        _pokemonAttribute = "Fire";
     }
     
     cout<<"Chosen Pokemon "<<_chosenPokemon<<endl;
