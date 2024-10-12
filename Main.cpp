@@ -4,6 +4,55 @@ using namespace std;
 string _playerName, _chosenPokemon, _pokemonAttribute;
 int _playerChoice;
 
+class Pokemon
+{
+    public:
+    int health;
+    string name;
+    PokemonType _typeofPokemon;
+
+    void Attack()
+    {
+        cout<<"Attacks with a cool move"<<endl;
+    }
+
+    Pokemon()
+    {
+
+    }
+
+    Pokemon(int _health, string _name, PokemonType _type)
+    {
+        health = _health;
+        name = _name;
+        _typeofPokemon = _type;
+    }
+};
+
+class Player
+{
+    public:
+    string _pname;
+    Pokemon _pokemonChosen;
+    int choice;
+
+    void choosePokemon(int choice)
+    {
+
+    }
+
+    Player()
+    {
+
+    }
+
+    Player(string pname, Pokemon chosenPokemon)
+    {
+        _pname = pname;
+        _pokemonChosen = chosenPokemon;
+    }
+};
+
 enum class PokemonChoice
 {
     Bulbasaur,
