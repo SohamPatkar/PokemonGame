@@ -34,7 +34,10 @@ class Pokemon
 
     Pokemon()
     {
-
+        name = "Pikachu";
+        _typeofPokemon = PokemonType::Electric;
+        health = 10;
+        cout << "A new Pokemon has been created with the default constructor!\n";
     }
 
     Pokemon(int _health, string _name, PokemonType _type)
@@ -42,6 +45,18 @@ class Pokemon
         health = _health;
         name = _name;
         _typeofPokemon = _type;
+    }
+
+    Pokemon(const Pokemon &other)
+    {
+        health = other.health;
+        name = other.name;
+        _typeofPokemon = other._typeofPokemon;
+    }
+
+    ~Pokemon()
+    {
+        cout<<"Pokemon has been released!"<<endl;
     }
 };
 
@@ -81,7 +96,16 @@ class Player
 
     Player()
     {
+        _pname = "Trainer";
+        _pokemonChosen;
+        cout << "A new player named " << _pname << " has been created!" << _pokemonChosen.name<<endl; 
+    }
 
+    Player(const Player &player)
+    {
+        _pname = player._pname;
+        _pokemonChosen = player._pokemonChosen;
+        cout<<"Player Copied"<<endl;
     }
 
     Player(string pname, Pokemon chosenPokemon)
@@ -95,6 +119,16 @@ class ProfessorOak
 {
     public:
     string p_name;
+
+    ProfessorOak()
+    {
+
+    }
+
+    ProfessorOak(string name)
+    {
+        p_name = name;
+    }
 
     void greetPlayer(Player &player)
     {
@@ -123,18 +157,34 @@ int main()
     ProfessorOak professor;
     Pokemon placeholderPokemon;
 
+    Pokemon defaultPokemon;
+    Pokemon charmander = Pokemon(100,"Charmander",PokemonType::Fire);
+    Pokemon bulbasaur = Pokemon(100,"Bulbasaur",PokemonType::Grass);
+    Pokemon bulbasaurCopy = Pokemon(bulbasaur);
+    bulbasaurCopy.health = 80;
+
+    {
+        Pokemon Ryu = Pokemon(100,"Ryu",PokemonType::Fire);
+    }
+
+    cout<<"Pokemon Details: "<<endl;
+    cout<<defaultPokemon.name<<endl;
+    cout<<charmander.name<<endl;
+    cout<<bulbasaur.name<<" Health:"<<bulbasaur.health<<endl;
+    cout<<bulbasaurCopy.name<<" Health:"<<bulbasaurCopy.health<<endl;
+
     placeholderPokemon.name = "Pikachu";
     placeholderPokemon.health = 100;
     placeholderPokemon._typeofPokemon = PokemonType::Electric;
 
-    player._pname = "Trainer";
+    player = Player("Trainer", bulbasaur);
+    professor = ProfessorOak("Professor Oak");
 
-    professor.p_name = "ProfessorOak";
+    Player playerCopy = Player(player);
 
     professor.greetPlayer(player);
     professor.offerPokemonChoices(player);
 
     cout<<"Player name: "<<player._pname<<endl;
     cout<<"Chosen Pokemon: "<< player._pokemonChosen.name<<endl;
-
 }
