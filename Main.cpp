@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
+#include<windows.h>
 using namespace std;
 
 string _playerName, _chosenPokemon, _pokemonAttribute;
@@ -7,13 +8,14 @@ int _playerChoice;
 
 void waitForEnter()
 {
+    cout <<"(Press Enter to continue...)"<<endl;
     cin.sync();
     cin.get();
 }
 
 void clearConsole()
 {
-    system("cls");
+    cout << "\033[2J\033[H";
 }
 
 enum class PokemonChoice
@@ -181,6 +183,7 @@ class ProfessorOak
 
     void offerPokemonChoices(Player &player)
     {
+        clearConsole();
         cout<<p_name<<": Tell me your name"<<endl;
         cin>> player._pname;
         waitForEnter();
