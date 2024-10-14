@@ -197,7 +197,6 @@ class ProfessorOak
         waitForEnter();
         player.choosePokemon(player.choice);
     }
-
 };
 
 void gameLoop(Player &player)
