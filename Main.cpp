@@ -1,10 +1,8 @@
 #include<iostream>
 #include<stdlib.h>
 #include<windows.h>
-#include"PokemonType.hpp"
-#include"PokemonChoice.hpp"
-#include"Player.hpp"
 #include"Utility.hpp"
+#include"Player.hpp"
 using namespace std;
 
 string _playerName, _chosenPokemon, _pokemonAttribute;
@@ -171,7 +169,7 @@ class ProfessorOak
         cout<<p_name<<": Enter 1 for Bulbasaur, 2 for Charmander and 3 for Squirtle"<<endl;
         cin>> player.choice;
         Utility::waitForEnter();
-        player.choosePokemon(player.choice);
+        Player::choosePokemon(player.choice);
     }
 };
 
@@ -231,13 +229,13 @@ void gameLoop(Player &player)
 int main()
 {
     Player player;
-    ProfessorOak professor;
+    ProfessorOak professor = ProfessorOak("Professor Oak");
     Pokemon placeholderPokemon;
 
     Pokemon defaultPokemon;
     Pokemon charmander = Pokemon(100,"Charmander",PokemonType::Fire);
 
-    professor = ProfessorOak("Professor Oak");
+   
     professor.greetPlayer(player);
     professor.offerPokemonChoices(player);
     professor.explainMainQuest(player);
