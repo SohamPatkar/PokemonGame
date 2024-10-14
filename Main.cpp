@@ -1,6 +1,8 @@
 #include<iostream>
 #include<stdlib.h>
 #include<windows.h>
+#include"PokemonType.hpp"
+#include"PokemonChoice.hpp"
 using namespace std;
 
 string _playerName, _chosenPokemon, _pokemonAttribute;
@@ -18,22 +20,6 @@ void clearConsole()
 {
     cout << "\033[2J\033[H";
 }
-
-enum class PokemonChoice
-{
-    Bulbasaur = 1,
-    Charmander,
-    Squirtle,
-    Pikachu
-};
-
-enum class PokemonType
-{
-    Grass,
-    Fire,
-    Water,
-    Electric
-};
 
 class Pokemon
 {
@@ -269,4 +255,4 @@ int main()
     gameLoop(player);
 
     return 0;
-#include "header.hpp"
+}
