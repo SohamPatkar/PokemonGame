@@ -83,7 +83,7 @@ class ProfessorOak
         cout<<p_name<<": Enter 1 for Bulbasaur, 2 for Charmander and 3 for Squirtle"<<endl;
         cin>> player.choice;
         Utility::waitForEnter();
-        Player::choosePokemon(player.choice);
+        player.choosePokemon(player.choice);
     }
 };
 

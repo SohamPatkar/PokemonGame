@@ -1,16 +1,17 @@
-#include"Pokemon.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
+
+class Pokemon;
 
 class Player
 {
     public:
     string _pname;
-    static Pokemon _pokemonChosen;
+    Pokemon _pokemonChosen;
     int choice;
 
-    static void choosePokemon(int choice);
+    void choosePokemon(int choice);
 
     Player();
 

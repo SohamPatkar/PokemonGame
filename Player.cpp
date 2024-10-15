@@ -1,3 +1,4 @@
+#include "Pokemon.hpp"
 #include "Player.hpp"
 #include "PokemonType.hpp"
 #include "Utility.hpp"
