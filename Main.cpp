@@ -11,39 +11,6 @@ int playerChoice;
 bool keepPlaying;
 
 #include"Pokemon.hpp"
-// class Pokemon
-// {
-//     public:
-//     int health;
-//     string name;
-//     PokemonType _typeofPokemon;
-
-//     void Attack()
-//     {
-//         cout<<"Attacks with a cool move"<<endl;
-//     }
-
-//     Pokemon()
-//     {
-//         name = "Pikachu";
-//         _typeofPokemon = PokemonType::Electric;
-//         health = 10;
-//     }
-
-//     Pokemon(int _health, string _name, PokemonType _type)
-//     {
-//         health = _health;
-//         name = _name;
-//         _typeofPokemon = _type;
-//     }
-
-//     Pokemon(const Pokemon &other)
-//     {
-//         health = other.health;
-//         name = other.name;
-//         _typeofPokemon = other._typeofPokemon;
-//     }
-// };
 
 #include"Player.hpp"
 
