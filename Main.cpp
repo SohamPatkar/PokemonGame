@@ -1,104 +1,50 @@
+#include"Utility.hpp"
+#include"PokemonType.hpp"
+#include"PokemonChoice.hpp"
 #include<iostream>
 #include<stdlib.h>
 #include<windows.h>
-#include"Utility.hpp"
-#include"Player.hpp"
 using namespace std;
 
 string _playerName, _chosenPokemon, _pokemonAttribute;
 int playerChoice;
 bool keepPlaying;
 
-// class Pokemon
-// {
-//     public:
-//     int health;
-//     string name;
-//     PokemonType _typeofPokemon;
+class Pokemon
+{
+    public:
+    int health;
+    string name;
+    PokemonType _typeofPokemon;
 
-//     void Attack()
-//     {
-//         cout<<"Attacks with a cool move"<<endl;
-//     }
+    void Attack()
+    {
+        cout<<"Attacks with a cool move"<<endl;
+    }
 
-//     Pokemon()
-//     {
-//         name = "Pikachu";
-//         _typeofPokemon = PokemonType::Electric;
-//         health = 10;
-//     }
+    Pokemon()
+    {
+        name = "Pikachu";
+        _typeofPokemon = PokemonType::Electric;
+        health = 10;
+    }
 
-//     Pokemon(int _health, string _name, PokemonType _type)
-//     {
-//         health = _health;
-//         name = _name;
-//         _typeofPokemon = _type;
-//     }
+    Pokemon(int _health, string _name, PokemonType _type)
+    {
+        health = _health;
+        name = _name;
+        _typeofPokemon = _type;
+    }
 
-//     Pokemon(const Pokemon &other)
-//     {
-//         health = other.health;
-//         name = other.name;
-//         _typeofPokemon = other._typeofPokemon;
-//     }
-// };
+    Pokemon(const Pokemon &other)
+    {
+        health = other.health;
+        name = other.name;
+        _typeofPokemon = other._typeofPokemon;
+    }
+};
 
-// class Player
-// {
-//     public:
-//     string _pname;
-//     Pokemon _pokemonChosen;
-//     int choice;
-
-//     void choosePokemon(int choice)
-//     {
-//         switch(choice)
-//         {
-//             case 1:
-//             _pokemonChosen = Pokemon(100, "Bulbasaur", PokemonType::Grass);
-//             cout<<"Well Bulbasaur, a nice choice"<<endl;
-//             Utility::waitForEnter();
-//             break;
-
-//             case 2:
-//             _pokemonChosen = Pokemon(100, "Charmander", PokemonType::Fire);
-//             cout<<"Well Charmander, a fiery choice"<<endl;
-//             Utility::waitForEnter();
-//             break;
-
-//             case 3:
-//             _pokemonChosen = Pokemon(100, "Squirtle", PokemonType::Water);
-//             cout<<"Well Squirtle, a nice choice"<<endl;
-//             Utility::waitForEnter();
-//             break;
-
-//             default:
-//             cout<<"Well I guess you need help with choosing pokemon, okay I will help you..."<<endl;
-//             _pokemonChosen = Pokemon(100, "Pikachu", PokemonType::Electric);
-//             cout<<"Here it is Pikachu, as you didnt like the choices..."<<endl;
-//             Utility::waitForEnter();
-//             break;
-//         }
-//     }
-
-//     Player()
-//     {
-//         _pname = "Trainer";
-//         _pokemonChosen; 
-//     }
-
-//     Player(const Player &player)
-//     {
-//         _pname = player._pname;
-//         _pokemonChosen = player._pokemonChosen;
-//     }
-
-//     Player(string pname, Pokemon chosenPokemon)
-//     {
-//         _pname = pname;
-//         _pokemonChosen = chosenPokemon;
-//     }
-// };
+#include"Player.hpp"
 
 class ProfessorOak
 {
