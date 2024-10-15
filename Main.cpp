@@ -1,18 +1,13 @@
+#include"Player.hpp"
 #include"Utility.hpp"
 #include"PokemonType.hpp"
 #include"PokemonChoice.hpp"
 #include<iostream>
-#include<stdlib.h>
-#include<windows.h>
 using namespace std;
 
 string _playerName, _chosenPokemon, _pokemonAttribute;
 int playerChoice;
 bool keepPlaying;
-
-#include"Pokemon.hpp"
-
-#include"Player.hpp"
 
 class ProfessorOak
 {

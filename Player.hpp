@@ -1,3 +1,4 @@
+#include "Pokemon.hpp"
 #include <iostream>
 #include <string>
 using namespace std;

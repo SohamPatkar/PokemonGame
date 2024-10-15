@@ -1,6 +1,7 @@
 #include "Pokemon.hpp"
 #include "Player.hpp"
 #include "PokemonType.hpp"
+#include "PokemonChoice.hpp"
 #include "Utility.hpp"
 #include <iostream>
 #include <string>
@@ -20,21 +21,21 @@ Player::Player(string pname, Pokemon chosenPokemon)
 
 void Player::choosePokemon(int choice)
 {
-    switch(choice)
+    switch((PokemonChoice)choice)
     {
-        case 1:
+        case PokemonChoice::Bulbasaur:
         _pokemonChosen = Pokemon(100,"Bulbasaur", PokemonType::Grass);
         cout<<"Well Bulbasaur, a nice choice"<<endl;
         Utility::waitForEnter();
         break;
 
-        case 2:
+        case PokemonChoice::Charmander:
         _pokemonChosen = Pokemon(100,"Charmander", PokemonType::Fire);
         cout<<"Well Charmander, a fiery choice"<<endl;
         Utility::waitForEnter();
         break;
 
-        case 3:
+        case PokemonChoice::Squirtle:
         _pokemonChosen = Pokemon(100,"Squirtle", PokemonType::Water);
         cout<<"Well Squirtle, a nice choice"<<endl;
         Utility::waitForEnter();
