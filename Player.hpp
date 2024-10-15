@@ -1,5 +1,3 @@
-#include "PokemonType.hpp"
-#include "Utility.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
