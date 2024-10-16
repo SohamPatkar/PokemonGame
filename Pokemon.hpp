@@ -11,7 +11,7 @@ class Pokemon
     string name;
     PokemonType _typeofPokemon;
 
-    static void Attack();
+    void Attack();
     
     Pokemon();
     Pokemon(int _health, string _name, PokemonType _type);

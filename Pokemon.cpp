@@ -11,6 +11,11 @@ Pokemon::Pokemon()
     health = 10;
 }
 
+void Pokemon::Attack()
+{
+    cout <<"You have been attacked!";
+}
+
 Pokemon::Pokemon(int _health, string _name, PokemonType _type)
 {
     health = _health;

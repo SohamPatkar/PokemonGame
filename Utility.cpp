@@ -7,11 +7,6 @@ void Utility::clearConsole()
     cout << "\033[2J\033[H";
 }
 
-void Utility::clearInputBuffer()
-{
-
-}
-
 void Utility::waitForEnter()
 {
     cout <<"(Press Enter to continue...)"<<endl;

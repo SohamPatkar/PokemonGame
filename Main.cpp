@@ -84,12 +84,11 @@ class ProfessorOak
 
 void gameLoop(Player &player)
 {
+    Utility::clearConsole();
     keepPlaying = true;
     while(keepPlaying)
     {
         string quitChoice;
-
-        Utility::clearConsole();
         cout<<"What would you like to do next "<<player._pname<<"?"<<endl;
         cout<<"1.Battle Wild Pokémon"<<endl;
         cout<<"2.Visit PokeCenter"<<endl;
@@ -102,7 +101,7 @@ void gameLoop(Player &player)
         switch(playerChoice)
         {
             case 1:
-            cout<<"You look around... but all the wild Pokemon are on vacation. Maybe try again later?\\n";
+            cout<<"You look around... but all the wild Pokemon are on vacation. Maybe try again later?"<<endl;
             break;
 
             case 2:
