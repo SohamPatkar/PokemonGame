@@ -2,6 +2,7 @@
 #include"Utility.hpp"
 #include"PokemonType.hpp"
 #include"PokemonChoice.hpp"
+#include"grass.hpp"
 #include<iostream>
 using namespace std;
 
@@ -139,6 +140,20 @@ int main()
     Player player;
     ProfessorOak professor = ProfessorOak("Professor Oak");
     Pokemon placeholderPokemon;
+
+    Grass caveGrass =
+    {
+        "Cave",
+        {{"Harambe"}, {"Grass Harambe"}},
+        80
+    };
+
+    Grass forestGrass =
+    {
+        "Forest",
+        {{"Harambe"}, {"Grass Harambe"}},
+        70
+    };
 
     Pokemon defaultPokemon;
     Pokemon charmander = Pokemon(100,"Charmander",PokemonType::Fire);
