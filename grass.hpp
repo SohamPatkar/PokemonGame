@@ -3,10 +3,12 @@
 #include <vector>
 using namespace std;
 
+class Pokemon;
+
 struct Grass
 {
     string environmenType;
-    vector<PokemonList> pokemonList;
+    vector<Pokemon> pokemonList;
     int encounterRate;
 };
 

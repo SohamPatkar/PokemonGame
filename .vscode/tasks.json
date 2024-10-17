@@ -11,6 +11,7 @@
                 "Utility.cpp",
                 "Player.cpp",
                 "Pokemon.cpp",
+                "WildEncounterManager.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
