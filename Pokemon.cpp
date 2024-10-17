@@ -11,9 +11,26 @@ Pokemon::Pokemon()
     health = 10;
 }
 
-void Pokemon::Attack()
+bool Pokemon::isFainted()
 {
-    cout <<"You have been attacked!";
+    return health <= 0;
+}
+
+void Pokemon::TakeDamage(int damage)
+{
+    health -= damage;
+    if(health <= 0)
+    {
+        health = 0;
+        isFainted();
+    }
+}
+
+void Pokemon::Attack(Pokemon &target)
+{
+    int damage = 10;
+    cout<<name<< " attacks " << target.name << " for " << damage << " damage!\\n";
+    target.TakeDamage(damage);
 }
 
 Pokemon::Pokemon(int _health, string _name, PokemonType _type)
