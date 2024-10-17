@@ -10,6 +10,7 @@ string _playerName, _chosenPokemon, _pokemonAttribute;
 int playerChoice;
 bool keepPlaying;
 
+
 class ProfessorOak
 {
     public:
@@ -98,6 +99,29 @@ class Game
 
     }
 
+    void battle(Pokemon &playerPokemon, Pokemon &wildPokemon) 
+    {
+        cout << "A wild " << wildPokemon.name << " appeared!\\n";
+
+        while (!playerPokemon.isFainted() && !wildPokemon.isFainted()) 
+        {
+            playerPokemon.Attack(wildPokemon); // Player attacks first
+
+            if (!wildPokemon.isFainted()) 
+            {
+                wildPokemon.Attack(playerPokemon); // Wild Pokémon attacks back
+            }
+        }
+
+        if (playerPokemon.isFainted()) 
+        {
+            cout << playerPokemon.name << " has fainted! You lose the battle.\\n";
+        } else 
+        {
+            cout << "You defeated the wild " << wildPokemon.name << "!\\n";
+        }
+    }
+
     void gameLoop(Player &player)
     {
         Utility::clearConsole();
@@ -120,7 +144,8 @@ class Game
                 {
                 WildEncounterManager encounteredPokemon;
                 Pokemon encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
-                cout << "A wild " << encountered.name << " appeared!\n"; 
+                cout << "A wild " << encountered.name << " appeared!\n";
+                battle(player._pokemonChosen, encountered);
                 break;
                 }
                 case 2:
@@ -167,15 +192,6 @@ int main()
     ProfessorOak professor = ProfessorOak("Professor Oak");
     Pokemon placeholderPokemon;
     Game game;
-
-    Grass caveGrass =
-    {
-        "Cave",
-        {Pokemon(), Pokemon()},
-        80
-    };
-
-    
 
     Pokemon defaultPokemon;
     Pokemon charmander = Pokemon(100,"Charmander",PokemonType::Fire);
