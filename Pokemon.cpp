@@ -4,16 +4,38 @@
 #include <string>
 using namespace std;
 
+
 Pokemon::Pokemon()
 {
     name = "Pikachu";
     _typeofPokemon = PokemonType::Electric;
-    health = 10;
+    health = 100;
 }
 
-void Pokemon::Attack()
+void Pokemon::heal()
 {
-    cout <<"You have been attacked!";
+    health = maxhealth;
+}
+
+bool Pokemon::isFainted()
+{
+    return health <= 0;
+}
+
+void Pokemon::TakeDamage(int damage)
+{
+    health -= damage;
+    if(health <= 0)
+    {
+        health = 0;
+    }
+}
+
+void Pokemon::Attack(Pokemon &target)
+{
+    int damage = attackPower;
+    cout<<name<< " attacks " << target.name << " for " << damage << " damage!\\n";
+    target.TakeDamage(damage);
 }
 
 Pokemon::Pokemon(int _health, string _name, PokemonType _type)
