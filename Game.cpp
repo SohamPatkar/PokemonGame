@@ -2,6 +2,7 @@
 #include"Player.hpp"
 #include"Utility.hpp"
 #include"WildEncounterManager.hpp"
+#include"BattleManager.hpp"
 using namespace std;
 
 Game::Game()
@@ -15,32 +16,10 @@ Game::Game()
 
 }
 
-void Game::battle(Pokemon &playerPokemon, Pokemon &wildPokemon) 
-{
-    cout << "A wild " << wildPokemon.name << " appeared!\n";
-
-    while (!playerPokemon.isFainted() && !wildPokemon.isFainted()) 
-    {
-        playerPokemon.Attack(wildPokemon); // Player attacks first
-
-        if (!wildPokemon.isFainted()) 
-        {
-            wildPokemon.Attack(playerPokemon); // Wild Pokémon attacks back
-        }
-    }
-
-    if (playerPokemon.isFainted()) 
-    {
-        cout << playerPokemon.name << " has fainted! You lose the battle.\n";
-    } else 
-    {
-        cout << "You defeated the wild " << wildPokemon.name << "!\n";
-    }
-}
-
 void Game::gameLoop(Player &player)
 {
     Utility::clearConsole();
+    BattleManager battleManager;
     keepPlaying = true;
     while(keepPlaying)
     {
@@ -60,7 +39,7 @@ void Game::gameLoop(Player &player)
             {
                 WildEncounterManager encounteredPokemon;
                 Pokemon encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
-                battle(player._pokemonChosen, encountered);
+                battleManager.startBattle(player, encountered);
                 break;
             }
             case 2:

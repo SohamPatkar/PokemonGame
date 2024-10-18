@@ -7,7 +7,6 @@
 #include<iostream>
 using namespace std;
 
-string _playerName, _chosenPokemon, _pokemonAttribute;
 
 class ProfessorOak
 {

@@ -16,5 +16,4 @@ class Game
     
     Game();
     void gameLoop(Player &player);
-    void battle(Pokemon &playerPokemon, Pokemon &wildPokemon);
 };
