@@ -1,4 +1,5 @@
 #include "WildEncounterManager.hpp"
+#include "grass.hpp"
 #include "Pokemon.hpp"
 #include <iostream>
 using namespace std;

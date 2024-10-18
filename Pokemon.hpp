@@ -7,10 +7,13 @@ enum class PokemonType;
 class Pokemon
 {
     public:
-    int health, maxhealth;
+    int health;
+    int maxhealth = 100;
+    int attackPower = 25;
     string name;
     PokemonType _typeofPokemon;
 
+    void heal();
     bool isFainted();
     void TakeDamage(int damage);
     void Attack(Pokemon &pokemonattacked);

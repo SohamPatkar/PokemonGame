@@ -3,13 +3,11 @@
 #include"PokemonType.hpp"
 #include"PokemonChoice.hpp"
 #include"WildEncounterManager.hpp"
+#include"Game.hpp"
 #include<iostream>
 using namespace std;
 
 string _playerName, _chosenPokemon, _pokemonAttribute;
-int playerChoice;
-bool keepPlaying;
-
 
 class ProfessorOak
 {
@@ -83,108 +81,6 @@ class ProfessorOak
         player.choosePokemon(player.choice);
     }
 };
-
-class Game
-{
-    public:
-    Grass forestGrass;
-    Game()
-    {
-        forestGrass =
-        {
-            "Forest",
-            {Pokemon(), Pokemon()},
-            70
-        };
-
-    }
-
-    void battle(Pokemon &playerPokemon, Pokemon &wildPokemon) 
-    {
-        cout << "A wild " << wildPokemon.name << " appeared!\\n";
-
-        while (!playerPokemon.isFainted() && !wildPokemon.isFainted()) 
-        {
-            playerPokemon.Attack(wildPokemon); // Player attacks first
-
-            if (!wildPokemon.isFainted()) 
-            {
-                wildPokemon.Attack(playerPokemon); // Wild Pokémon attacks back
-            }
-        }
-
-        if (playerPokemon.isFainted()) 
-        {
-            cout << playerPokemon.name << " has fainted! You lose the battle.\\n";
-        } else 
-        {
-            cout << "You defeated the wild " << wildPokemon.name << "!\\n";
-        }
-    }
-
-    void gameLoop(Player &player)
-    {
-        Utility::clearConsole();
-        keepPlaying = true;
-        while(keepPlaying)
-        {
-            string quitChoice;
-            cout<<"What would you like to do next "<<player._pname<<"?"<<endl;
-            cout<<"1.Battle Wild Pokémon"<<endl;
-            cout<<"2.Visit PokeCenter"<<endl;
-            cout<<"3.Challenge Gyms"<<endl;
-            cout<<"4.Enter Pokémon League"<<endl;
-            cout<<"5.Quit"<<endl;
-            cout<<"Enter your next move:"<<endl;
-            cin>>playerChoice;
-
-            switch(playerChoice)
-            {
-                case 1:
-                {
-                WildEncounterManager encounteredPokemon;
-                Pokemon encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
-                cout << "A wild " << encountered.name << " appeared!\n";
-                battle(player._pokemonChosen, encountered);
-                break;
-                }
-                case 2:
-                {
-                cout<<"You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\\n";
-                break;
-                }
-                case 3:
-                {
-                cout<<"You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!"<<endl;
-                break;
-                }
-                case 4:
-                {
-                cout<<"You boldly step towards the Pokemon League... but the gatekeeper laughs and says, 'Maybe next time, champ!'\\n";
-                break;
-                }
-                case 5:
-                {
-                cout<<"You try to quit, but Professor Oak's voice echoes: 'There's no quitting in Pokemon training!'\\n";
-                cout<<"You really want to Quit?(Y/N)"<<endl;
-                cin >> quitChoice;
-                if(quitChoice == "Y" || quitChoice == "y")
-                {
-                    keepPlaying = false;
-                }
-                break;
-                }
-                default:
-                {
-                cout<<"Invalid Choice"<<endl;
-                break;
-                }
-            }
-            cout<<"Thanks for playing!"<<endl;
-        }
-    }
-};
-
 
 int main()
 {
