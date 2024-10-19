@@ -1,8 +1,8 @@
-#include"Game.hpp"
-#include"Player.hpp"
-#include"Utility.hpp"
-#include"WildEncounterManager.hpp"
-#include"BattleManager.hpp"
+#include"../../include/Main/Game.hpp"
+#include"../../include/Character/Player.hpp"
+#include"../../include/Utility/Utility.hpp"
+#include"../../include/Battle/WildEncounterManager.hpp"
+#include"../../include/Battle/BattleManager.hpp"
 using namespace std;
 
 Game::Game()
