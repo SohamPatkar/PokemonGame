@@ -1,17 +1,16 @@
-#include"./include/Character/Player.hpp"
+#include"./include/Main/Game.hpp"
+#include"./include/Character/Player/Player.hpp"
 #include"./include/Character/ProfessorOak.hpp"
-#include"./include/Utility/Utility.hpp"
 #include"./include/Pokemon/PokemonType.hpp"
 #include"./include/Pokemon/PokemonChoice.hpp"
 #include"./include/Battle/WildEncounterManager.hpp"
-#include"./include/Main/Game.hpp"
 #include<iostream>
 using namespace std;
 
 int main()
 {
     Player player;
-    ProfessorOak professor = ProfessorOak("Professor Oak");
+    N_Character::ProfessorOak professor = N_Character::ProfessorOak("Professor Oak");
     Pokemon placeholderPokemon;
     Game game;
 

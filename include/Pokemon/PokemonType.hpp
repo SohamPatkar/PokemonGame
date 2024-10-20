@@ -1,7 +1,11 @@
-enum class PokemonType
+namespace N_Pokemon
 {
-    Grass,
-    Fire,
-    Water,
-    Electric
-};
+    enum class PokemonType
+    {
+        Grass,
+        Fire,
+        Water,
+        Electric
+    };    
+}
+

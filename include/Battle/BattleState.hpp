@@ -1,14 +1,16 @@
+#include"../../include/Character/Player/Player.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Pokemon;
-
-struct BattleState
+namespace N_Battle
 {
-    Pokemon *playerPokemon;
-    Pokemon *wildPokemon;
+    struct BattleState
+    {
+        Pokemon *playerPokemon;
+        Pokemon *wildPokemon;
 
-    bool playerTurn;
-    bool battleOngoing;
-};
+        bool playerTurn;
+        bool battleOngoing;
+    };
+}

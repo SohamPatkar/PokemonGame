@@ -3,14 +3,18 @@
 #include "../../include/Pokemon/Pokemon.hpp"
 #include <iostream>
 using namespace std;
+using namespace N_Pokemon;
 
-WildEncounterManager::WildEncounterManager()
+namespace N_Battle
 {
-    srand(time(0));
-}
+    WildEncounterManager::WildEncounterManager()
+    {
+        srand(time(0));
+    }
 
-Pokemon WildEncounterManager::getRandomPokemonFromGrass(const Grass &grass)
-{
-    int randomIndex = rand() % grass.pokemonList.size();
-    return grass.pokemonList[randomIndex];
+    N_Pokemon::Pokemon WildEncounterManager::getRandomPokemonFromGrass(const N_Pokemon::Grass &grass)
+    {
+        int randomIndex = rand() % grass.pokemonList.size();
+        return grass.pokemonList[randomIndex];
+    }
 }

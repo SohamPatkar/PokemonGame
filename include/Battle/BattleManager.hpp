@@ -5,15 +5,17 @@ using namespace std;
 class Pokemon;
 class Player;
 
-
-class BattleManager
+namespace N_Battle
 {
-    public:
-    BattleState battleState;
-    void startBattle(Player &player, Pokemon &wildPokemon);
+    class BattleManager
+    {
+        public:
+        BattleState battleState;
+        void startBattle(Player &player, Pokemon &wildPokemon);
 
-    private:
-    void battle(Pokemon &playerPokemon, Pokemon &wildPokemon);
-    void handleBattleOutcome();
-    void updateState();
-};
+        private:
+        void battle(Pokemon &playerPokemon, Pokemon &wildPokemon);
+        void handleBattleOutcome();
+        void updateState();
+    };
+}

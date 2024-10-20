@@ -8,13 +8,6 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "Main.cpp",
-                "E:/C++projects/PokemonGame/src/Battle/BattleManager.cpp",
-                "E:/C++projects/PokemonGame/src/Battle/WildEncounterManager.cpp",
-                "E:/C++projects/PokemonGame/src/Main/Game.cpp",
-                "E:/C++projects/PokemonGame/src/Character/Player.cpp",
-                "E:/C++projects/PokemonGame/src/Character/ProfessorOak.cpp",
-                "E:/C++projects/PokemonGame/src/Pokemon/Pokemon.cpp",
-                "E:/C++projects/PokemonGame/src/Utility/Utility.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

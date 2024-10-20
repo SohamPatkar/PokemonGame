@@ -4,20 +4,24 @@ using namespace std;
 
 enum class PokemonType;
 
-class Pokemon
+namespace N_Pokemon
 {
-    public:
-    int health;
-    int maxhealth = 100;
-    int attackPower = 25;
-    string name;
-    PokemonType _typeofPokemon;
+    class Pokemon
+    {
+        public:
+        int health;
+        int maxhealth = 100;
+        int attackPower = 25;
+        string name;
+        PokemonType _typeofPokemon;
 
-    void heal();
-    bool isFainted();
-    void TakeDamage(int damage);
-    void Attack(Pokemon &pokemonattacked);
-    
-    Pokemon();
-    Pokemon(int _health, string _name, PokemonType _type);
-};
+        void heal();
+        bool isFainted();
+        void TakeDamage(int damage);
+        void Attack(Pokemon &pokemonattacked);
+        
+        Pokemon();
+        Pokemon(int _health, string _name, PokemonType _type);
+    };
+}
+

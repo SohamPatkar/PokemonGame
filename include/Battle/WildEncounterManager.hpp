@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
-class Pokemon;
-struct Grass;
-
-class WildEncounterManager
+namespace N_Battle
 {
-    public:
+    class WildEncounterManager
+    {
+        public:
 
-    WildEncounterManager();
+        WildEncounterManager();
 
-    Pokemon getRandomPokemonFromGrass(const Grass &grass); 
-};
+        N_Pokemon::Pokemon getRandomPokemonFromGrass(const N_Pokemon::Grass &grass); 
+    };
+}

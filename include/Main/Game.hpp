@@ -1,19 +1,22 @@
-#include "../Pokemon/grass.hpp"
+#include"../Pokemon/grass.hpp"
 #include <iostream>
 using namespace std;
+using namespace N_Pokemon;
 
 class Player;
-class Pokemon;
 
-class Game
+namespace N_Main
 {
-    private:
-    Grass forestGrass;
-    
-    public:
-    bool keepPlaying;
-    int playerChoice;
-    
-    Game();
-    void gameLoop(Player &player);
-};
+    class Game
+    {
+        private:
+        Grass forestGrass;
+        
+        public:
+        bool keepPlaying;
+        int playerChoice;
+        
+        Game();
+        void gameLoop(Player &player);
+    };
+}
