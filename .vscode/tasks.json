@@ -7,11 +7,14 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "Main.cpp",  // List all your .cpp files
-                "Utility.cpp",
-                "Player.cpp",
-                "Pokemon.cpp",
-                "WildEncounterManager.cpp",
+                "Main.cpp",
+                "E:/C++projects/PokemonGame/src/Main/Game.cpp",
+                "E:/C++projects/PokemonGame/src/Battle/BattleManager.cpp",
+                "E:/C++projects/PokemonGame/src/Battle/WildEncounterManager.cpp",
+                "E:/C++projects/PokemonGame/src/Character/Player/Player.cpp",
+                "E:/C++projects/PokemonGame/src/Character/ProfessorOak.cpp",
+                "E:/C++projects/PokemonGame/src/Utility/Utility.cpp",
+                "E:/C++projects/PokemonGame/src/Pokemon/Pokemon.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
