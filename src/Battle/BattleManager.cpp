@@ -1,3 +1,4 @@
+#pragma once
 #include"../../include/Battle/BattleManager.hpp"
 #include"../../include/Character/Player/Player.hpp"
 #include"../../include/Utility/Utility.hpp"
@@ -7,8 +8,7 @@ using namespace N_Utility;
 
 namespace N_Battle
 {
-    
-    void BattleManager::startBattle(Player &player, Pokemon &wildPokemon) 
+    void BattleManager::startBattle(N_Player::Player &player, N_Pokemon::Pokemon &wildPokemon) 
     {
         battleState.playerPokemon = &player._pokemonChosen;
         battleState.wildPokemon = &wildPokemon;
@@ -30,7 +30,7 @@ namespace N_Battle
         }
     }
 
-    void BattleManager::battle(Pokemon &playerPokemon, Pokemon &wildPokemon)
+    void BattleManager::battle(N_Pokemon::Pokemon &playerPokemon, N_Pokemon::Pokemon &wildPokemon)
     {
         cout << "A wild " << wildPokemon.name << " appeared!\n";
         

@@ -1,7 +1,8 @@
+#pragma once
 #include "../../../include/Character/Player/Player.hpp"
-#include "../../include/Pokemon/PokemonType.hpp"
-#include "../../include/Pokemon/PokemonChoice.hpp"
-#include "../../include/Utility/Utility.hpp"
+#include "../../../include/Pokemon/PokemonType.hpp"
+#include "../../../include/Pokemon/PokemonChoice.hpp"
+#include "../../../include/Utility/Utility.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -12,10 +13,10 @@ namespace N_Player
     Player::Player()
     {
         _pname = "Trainer";
-        _pokemonChosen = Pokemon(100,"Pikachu",PokemonType::Electric); 
+        _pokemonChosen = N_Pokemon::Pokemon(100,"Pikachu",N_Pokemon::PokemonType::Electric); 
     }
 
-    Player::Player(string pname, Pokemon chosenPokemon)
+    Player::Player(string pname, N_Pokemon::Pokemon chosenPokemon)
     {
         _pname = pname;
         _pokemonChosen = chosenPokemon;
@@ -23,29 +24,29 @@ namespace N_Player
 
     void Player::choosePokemon(int choice)
     {
-        switch((PokemonChoice)choice)
+        switch((N_Pokemon::PokemonChoice)choice)
         {
-            case PokemonChoice::Bulbasaur:
-            _pokemonChosen = Pokemon(100,"Bulbasaur", PokemonType::Grass);
+            case N_Pokemon::PokemonChoice::Bulbasaur:
+            _pokemonChosen = N_Pokemon::Pokemon(100,"Bulbasaur", N_Pokemon::PokemonType::Grass);
             cout<<"Well Bulbasaur, a nice choice"<<endl;
             Utility::waitForEnter();
             break;
 
-            case PokemonChoice::Charmander:
-            _pokemonChosen = Pokemon(100,"Charmander", PokemonType::Fire);
+            case N_Pokemon::PokemonChoice::Charmander:
+            _pokemonChosen = N_Pokemon::Pokemon(100,"Charmander", N_Pokemon::PokemonType::Fire);
             cout<<"Well Charmander, a fiery choice"<<endl;
             Utility::waitForEnter();
             break;
 
-            case PokemonChoice::Squirtle:
-            _pokemonChosen = Pokemon(100,"Squirtle", PokemonType::Water);
+            case N_Pokemon::PokemonChoice::Squirtle:
+            _pokemonChosen = N_Pokemon::Pokemon(100,"Squirtle", N_Pokemon::PokemonType::Water);
             cout<<"Well Squirtle, a nice choice"<<endl;
             Utility::waitForEnter();
             break;
 
             default:
             cout<<"Well I guess you need help with choosing pokemon, okay I will help you..."<<endl;
-            _pokemonChosen = Pokemon(100,"Pikachu", PokemonType::Electric);
+            _pokemonChosen = N_Pokemon::Pokemon(100,"Pikachu", N_Pokemon::PokemonType::Electric);
             cout<<"Here it is Pikachu, as you didnt like the choices..."<<endl;
             Utility::waitForEnter();
             break;

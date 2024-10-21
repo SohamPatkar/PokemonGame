@@ -1,3 +1,6 @@
+#pragma once
+#include"../Pokemon/Pokemon.hpp"
+#include"../Pokemon/grass.hpp"
 #include <iostream>
 using namespace std;
 

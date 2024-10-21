@@ -18,7 +18,7 @@ namespace N_Character
         p_name = name;
     }
 
-    void ProfessorOak::explainMainQuest(Player &player)
+    void ProfessorOak::explainMainQuest(N_Player::Player &player)
     {
         N_Utility::Utility::clearConsole();
         cout<<p_name<<": Oak-ay "<<player._pname<<", I am about to explain you about your upcoming grand adventure."<<endl;
@@ -49,7 +49,7 @@ namespace N_Character
         N_Utility::Utility::waitForEnter();
     }
 
-    void ProfessorOak::greetPlayer(Player &player)
+    void ProfessorOak::greetPlayer(N_Player::Player &player)
     {
         cout << p_name << ": Hello there! Welcome to the world of Pokemon!\n";
         N_Utility::Utility::waitForEnter();
@@ -59,7 +59,7 @@ namespace N_Character
         N_Utility::Utility::waitForEnter();
     }
 
-    void ProfessorOak::offerPokemonChoices(Player &player)
+    void ProfessorOak::offerPokemonChoices(N_Player::Player &player)
     {
         N_Utility::Utility::clearConsole();
         cout<<p_name<<": Tell me your name"<<endl;

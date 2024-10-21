@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,10 +6,12 @@ using namespace std;
 
 namespace N_Pokemon
 {
+    class Pokemon;
+
     struct Grass
     {
         string environmenType;
-        vector<N_Pokemon::Pokemon> pokemonList;
+        vector<Pokemon> pokemonList;
         int encounterRate;
     };
 }

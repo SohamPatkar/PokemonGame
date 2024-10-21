@@ -9,15 +9,14 @@ using namespace std;
 
 int main()
 {
-    Player player;
-    N_Character::ProfessorOak professor = N_Character::ProfessorOak("Professor Oak");
-    Pokemon placeholderPokemon;
-    Game game;
+    N_Pokemon::Pokemon charmander = N_Pokemon::Pokemon(100, "Charmander", N_Pokemon::PokemonType::Fire);
 
-    Pokemon defaultPokemon;
-    Pokemon charmander = Pokemon(100,"Charmander",PokemonType::Fire);
+    N_Player::Player player("Ash", charmander);
 
-   
+    N_Character::ProfessorOak professor;
+    
+    N_Main::Game game;
+
     professor.greetPlayer(player);
     professor.offerPokemonChoices(player);
     professor.explainMainQuest(player);

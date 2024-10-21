@@ -1,3 +1,4 @@
+#include<iostream>
 
 namespace N_Pokemon
 {

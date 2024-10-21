@@ -1,3 +1,5 @@
+#pragma once
+#include"../../include/Pokemon/PokemonType.hpp"
 #include"../../include/Main/Game.hpp"
 #include"../../include/Character/Player/Player.hpp"
 #include"../../include/Utility/Utility.hpp"
@@ -9,13 +11,15 @@ namespace N_Main
 {
     Game::Game()
     {
-       N_Pokemon::Grass forestGrass =
+        forestGrass = 
         {
             "Forest",
-            {N_Pokemon::Pokemon(), N_Pokemon::Pokemon()},
+            {
+                N_Pokemon::Pokemon(50, "Charmander", N_Pokemon::PokemonType::Fire),
+                N_Pokemon::Pokemon(50, "Pikachu", N_Pokemon::PokemonType::Electric)
+            },
             70
         };
-
     }
 
     void Game::gameLoop(N_Player::Player &player)

@@ -1,11 +1,12 @@
+#pragma once
 #include <iostream>
 #include <string>
 using namespace std;
 
-enum class PokemonType;
-
 namespace N_Pokemon
 {
+    enum class PokemonType;
+
     class Pokemon
     {
         public:

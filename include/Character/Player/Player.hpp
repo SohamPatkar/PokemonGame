@@ -1,3 +1,4 @@
+#pragma once
 #include"../../Pokemon/Pokemon.hpp"
 #include <iostream>
 #include <string>
@@ -5,8 +6,6 @@ using namespace std;
 
 namespace N_Player
 {
-    class Pokemon;
-
     class Player
     {
         public:
@@ -18,7 +17,7 @@ namespace N_Player
 
         Player();
 
-        Player(string pname, Pokemon chosenPokemon);
+        Player(string pname, N_Pokemon::Pokemon chosenPokemon);
     };    
 }
 
