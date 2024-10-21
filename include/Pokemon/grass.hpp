@@ -8,7 +8,7 @@ namespace N_Pokemon
     struct Grass
     {
         string environmenType;
-        vector<Pokemon> pokemonList;
+        vector<N_Pokemon::Pokemon> pokemonList;
         int encounterRate;
     };
 }

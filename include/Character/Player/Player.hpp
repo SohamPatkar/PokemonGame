@@ -5,11 +5,13 @@ using namespace std;
 
 namespace N_Player
 {
+    class Pokemon;
+
     class Player
     {
         public:
         string _pname;
-        Pokemon _pokemonChosen;
+        N_Pokemon::Pokemon _pokemonChosen;
         int choice;
 
         void choosePokemon(int choice);

@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
 
-class Player;
-
 namespace N_Character
 {
+    class Player;
+
     class ProfessorOak
     {
         public:

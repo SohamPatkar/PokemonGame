@@ -17,6 +17,6 @@ namespace N_Main
         int playerChoice;
         
         Game();
-        void gameLoop(Player &player);
+        void gameLoop(N_Player::Player &player);
     };
 }

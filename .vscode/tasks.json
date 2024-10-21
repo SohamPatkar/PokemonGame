@@ -8,6 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "Main.cpp",
+                "E:/C++projects/PokemonGame/src/Main/Game.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

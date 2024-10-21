@@ -4,26 +4,24 @@
 #include"../../include/Battle/WildEncounterManager.hpp"
 #include"../../include/Battle/BattleManager.hpp"
 using namespace std;
-using namespace N_Utility;
-using namespace N_Battle;
 
 namespace N_Main
 {
     Game::Game()
     {
-       forestGrass =
+       N_Pokemon::Grass forestGrass =
         {
             "Forest",
-            {Pokemon(), Pokemon()},
+            {N_Pokemon::Pokemon(), N_Pokemon::Pokemon()},
             70
         };
 
     }
 
-    void Game::gameLoop(Player &player)
+    void Game::gameLoop(N_Player::Player &player)
     {
-        Utility::clearConsole();
-        BattleManager battleManager;
+        N_Utility::Utility::clearConsole();
+        N_Battle::BattleManager battleManager;
         keepPlaying = true;
         while(keepPlaying)
         {
@@ -41,8 +39,8 @@ namespace N_Main
             {
                 case 1:
                 {
-                    WildEncounterManager encounteredPokemon;
-                    Pokemon encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
+                    N_Battle::WildEncounterManager encounteredPokemon;
+                    N_Pokemon::Pokemon encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
                     battleManager.startBattle(player, encountered);
                     break;
                 }

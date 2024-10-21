@@ -11,7 +11,7 @@ namespace N_Battle
     {
         public:
         BattleState battleState;
-        void startBattle(Player &player, Pokemon &wildPokemon);
+        void startBattle(N_Player::Player &player, Pokemon &wildPokemon);
 
         private:
         void battle(Pokemon &playerPokemon, Pokemon &wildPokemon);
