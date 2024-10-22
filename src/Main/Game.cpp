@@ -1,4 +1,3 @@
-#pragma once
 #include"../../include/Pokemon/PokemonType.hpp"
 #include"../../include/Main/Game.hpp"
 #include"../../include/Character/Player/Player.hpp"

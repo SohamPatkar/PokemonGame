@@ -15,6 +15,10 @@
                 "E:/C++projects/PokemonGame/src/Character/ProfessorOak.cpp",
                 "E:/C++projects/PokemonGame/src/Utility/Utility.cpp",
                 "E:/C++projects/PokemonGame/src/Pokemon/Pokemon.cpp",
+                "E:/C++projects/PokemonGame/src/Pokemon/Pokemons/Pikachu.cpp",
+                "E:/C++projects/PokemonGame/src/Pokemon/Pokemons/Pidgey.cpp",
+                "E:/C++projects/PokemonGame/src/Pokemon/Pokemons/Caterpie.cpp",
+                "E:/C++projects/PokemonGame/src/Pokemon/Pokemons/Zubat.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

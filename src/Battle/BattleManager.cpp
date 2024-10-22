@@ -1,4 +1,3 @@
-#pragma once
 #include"../../include/Battle/BattleManager.hpp"
 #include"../../include/Character/Player/Player.hpp"
 #include"../../include/Utility/Utility.hpp"
