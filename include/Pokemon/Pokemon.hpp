@@ -9,13 +9,14 @@ namespace N_Pokemon
 
     class Pokemon
     {
-        public:
+        protected:
         int health;
         int maxhealth = 100;
         int attackPower = 25;
-        string name;
         PokemonType _typeofPokemon;
 
+        public:
+        string name;
         void heal();
         bool isFainted();
         void TakeDamage(int damage);

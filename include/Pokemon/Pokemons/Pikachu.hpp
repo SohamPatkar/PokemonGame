@@ -10,6 +10,7 @@ namespace N_Pokemon
             public:
             Pikachu();
 
+            private:
             void thunderBolt(Pokemon &target);
         };
     }
