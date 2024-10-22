@@ -5,7 +5,9 @@ namespace N_Pokemon
         Grass,
         Fire,
         Water,
-        Electric
+        Electric,
+        Normal,
+        Poison
     };    
 }
 

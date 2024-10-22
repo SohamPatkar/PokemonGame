@@ -1,5 +1,8 @@
-#pragma once
 #include"../../include/Pokemon/PokemonType.hpp"
+#include"../../include/Pokemon/Pokemons/Pidgey.hpp"
+#include"../../include/Pokemon/Pokemons/Pikachu.hpp"
+#include"../../include/Pokemon/Pokemons/Caterpie.hpp"
+#include"../../include/Pokemon/Pokemons/Zubat.hpp"
 #include"../../include/Main/Game.hpp"
 #include"../../include/Character/Player/Player.hpp"
 #include"../../include/Utility/Utility.hpp"
@@ -15,7 +18,7 @@ namespace N_Main
         {
             "Forest",
             {
-                N_Pokemon::Pokemon(50, "Charmander", N_Pokemon::PokemonType::Fire),
+                N_Pokemon::Pokemon(50, "Pikachu", N_Pokemon::PokemonType::Electric),
                 N_Pokemon::Pokemon(50, "Pikachu", N_Pokemon::PokemonType::Electric)
             },
             70

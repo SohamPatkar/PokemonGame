@@ -1,4 +1,3 @@
-#pragma once
 #include "../../include/Battle/WildEncounterManager.hpp"
 #include "../../include/Pokemon/grass.hpp"
 #include "../../include/Pokemon/Pokemon.hpp"
