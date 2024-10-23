@@ -5,7 +5,7 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Pidgey : Pokemon
+        class Pidgey : public Pokemon
         {
             public:
             Pidgey();

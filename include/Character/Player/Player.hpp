@@ -17,7 +17,7 @@ namespace N_Player
 
         Player();
 
-        Player(string pname, N_Pokemon::Pokemon chosenPokemon);
+        Player(string pname, N_Pokemon::Pokemon* chosenPokemon);
     };    
 }
 

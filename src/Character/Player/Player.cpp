@@ -15,10 +15,10 @@ namespace N_Player
         _pokemonChosen = N_Pokemon::Pokemon(100,"Pikachu",N_Pokemon::PokemonType::Electric); 
     }
 
-    Player::Player(string pname, N_Pokemon::Pokemon chosenPokemon)
+    Player::Player(string pname, N_Pokemon::Pokemon* chosenPokemon)
     {
         _pname = pname;
-        _pokemonChosen = chosenPokemon;
+        _pokemonChosen = *chosenPokemon;
     }
 
     void Player::choosePokemon(int choice)

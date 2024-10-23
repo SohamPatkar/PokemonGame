@@ -18,14 +18,14 @@ namespace N_Main
         {
             "Forest",
             {
-                N_Pokemon::Pokemon(50, "Pikachu", N_Pokemon::PokemonType::Electric),
+                N_Pokemons::Pidgey(),
                 N_Pokemon::Pokemon(50, "Pikachu", N_Pokemon::PokemonType::Electric)
             },
             70
         };
     }
 
-    void Game::gameLoop(N_Player::Player &player)
+    void Game::gameLoop(N_Player::Player* player)
     {
         N_Utility::Utility::clearConsole();
         N_Battle::BattleManager battleManager;
@@ -33,7 +33,7 @@ namespace N_Main
         while(keepPlaying)
         {
             string quitChoice;
-            cout<<"What would you like to do next "<<player._pname<<"?"<<endl;
+            cout<<"What would you like to do next "<<player->_pname<<"?"<<endl;
             cout<<"1.Battle Wild Pokémon"<<endl;
             cout<<"2.Visit PokeCenter"<<endl;
             cout<<"3.Challenge Gyms"<<endl;
@@ -48,12 +48,12 @@ namespace N_Main
                 {
                     N_Battle::WildEncounterManager encounteredPokemon;
                     N_Pokemon::Pokemon encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
-                    battleManager.startBattle(player, encountered);
+                    battleManager.startBattle(*player, encountered);
                     break;
                 }
                 case 2:
                 {
-                    player._pokemonChosen.heal();
+                    player->_pokemonChosen.heal();
                     cout<<"You go to the PokeCenter and ask for heal."<<endl;
                     break;
                 }
