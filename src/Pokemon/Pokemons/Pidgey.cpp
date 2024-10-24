@@ -15,6 +15,15 @@ namespace N_Pokemon
         {
             cout<<"You have been attacked with Wing Attack!"<<endl;
             target->TakeDamage(20);
+
+            if(target->isFainted())
+            {
+                cout<<"Your oppenent has fainted!"<<endl;
+            }
+            else
+            {
+                cout<<"Your oppenent has "<<target->getHealth()<<" HP left"<<endl; 
+            }
         }
 
         void Pidgey::Attack(Pokemon* target)

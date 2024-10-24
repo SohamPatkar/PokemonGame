@@ -21,6 +21,8 @@ namespace N_Pokemon
         bool isFainted();
         void TakeDamage(int damage);
         virtual void Attack(Pokemon *pokemonattacked);
+
+        int getHealth();
         
         Pokemon();
         Pokemon(int _health, string _name, PokemonType _type);
