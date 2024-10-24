@@ -5,7 +5,7 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Bulbasaur : Pokemon
+        class Bulbasaur : public Pokemon
         {
             public:
             Bulbasaur();

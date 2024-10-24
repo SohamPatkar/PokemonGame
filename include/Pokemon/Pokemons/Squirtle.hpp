@@ -5,7 +5,7 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Squirtle : Pokemon
+        class Squirtle : public Pokemon
         {
             public:
             Squirtle();

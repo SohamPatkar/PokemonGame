@@ -5,7 +5,7 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Caterpie : Pokemon
+        class Caterpie : public Pokemon
         {
             public:
             Caterpie();

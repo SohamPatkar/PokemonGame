@@ -9,9 +9,7 @@ using namespace std;
 
 int main()
 {
-    N_Pokemon::Pokemon* charmander = new N_Pokemon::Pokemon(100, "Charmander", N_Pokemon::PokemonType::Fire);
-
-    N_Player::Player* player = new N_Player::Player("Ash", charmander);
+    N_Player::Player* player = new N_Player::Player("Ash");
 
     N_Character::ProfessorOak* professor = new N_Character::ProfessorOak();
     
@@ -22,7 +20,6 @@ int main()
     professor->explainMainQuest(player);
     game->gameLoop(player);
 
-    delete charmander;
     delete player;
     delete professor;
     delete game;

@@ -14,7 +14,7 @@ namespace N_Main
 {
     Game::Game()
     {
-        forestGrass = 
+        forestGrass = new Grass
         {
             "Forest",
             {
@@ -47,13 +47,13 @@ namespace N_Main
                 case 1:
                 {
                     N_Battle::WildEncounterManager encounteredPokemon;
-                    N_Pokemon::Pokemon encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
-                    battleManager.startBattle(*player, encountered);
+                    N_Pokemon::Pokemon* encountered = encounteredPokemon.getRandomPokemonFromGrass(forestGrass);
+                    battleManager.startBattle(player, encountered);
                     break;
                 }
                 case 2:
                 {
-                    player->_pokemonChosen.heal();
+                    player->_pokemonChosen->heal();
                     cout<<"You go to the PokeCenter and ask for heal."<<endl;
                     break;
                 }

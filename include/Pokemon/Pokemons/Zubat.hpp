@@ -5,7 +5,7 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Zubat : Pokemon
+        class Zubat : public Pokemon
         {
             public:
             Zubat();

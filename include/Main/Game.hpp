@@ -10,7 +10,7 @@ namespace N_Main
     class Game
     {
         private:
-        N_Pokemon::Grass forestGrass;
+        N_Pokemon::Grass* forestGrass;
         
         public:
         bool keepPlaying;

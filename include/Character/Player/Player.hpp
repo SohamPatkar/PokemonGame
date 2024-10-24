@@ -10,14 +10,14 @@ namespace N_Player
     {
         public:
         string _pname;
-        N_Pokemon::Pokemon _pokemonChosen;
+        N_Pokemon::Pokemon* _pokemonChosen;
         int choice;
 
         void choosePokemon(int choice);
 
         Player();
 
-        Player(string pname, N_Pokemon::Pokemon* chosenPokemon);
+        Player(string pname);
     };    
 }
 

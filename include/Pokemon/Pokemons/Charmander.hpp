@@ -5,7 +5,7 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Charmander : Pokemon
+        class Charmander : public Pokemon
         {
             public:
             Charmander();
