@@ -11,10 +11,15 @@ namespace N_Pokemon
             Pokemon(100, "Bulbasaur", PokemonType::Grass);
         }
 
-        void Bulbasaur::vineWhip(Pokemon &target)
+        void Bulbasaur::vineWhip(Pokemon* target)
         {
             cout<<"You have been attacked with Flame Burst!"<<endl;
-            target.TakeDamage(20);
+            target->TakeDamage(20);
+        }
+
+        void Bulbasaur::Attack(Pokemon* target)
+        {
+            vineWhip(target);
         }
     }
 }

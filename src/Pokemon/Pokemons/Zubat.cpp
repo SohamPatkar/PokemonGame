@@ -11,10 +11,15 @@ namespace N_Pokemon
             Pokemon(100, "Zubat", PokemonType::Poison);
         }
 
-        void Zubat::superSonic(Pokemon &target)
+        void Zubat::superSonic(Pokemon* target)
         {
             cout<<"You have been attacked with Super Sonic!"<<endl;
-            target.TakeDamage(20);
+            target->TakeDamage(20);
+        }
+
+        void Zubat::Attack(Pokemon* target)
+        {
+            superSonic(target);
         }
     }
 }

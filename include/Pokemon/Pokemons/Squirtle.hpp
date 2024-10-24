@@ -9,9 +9,10 @@ namespace N_Pokemon
         {
             public:
             Squirtle();
-            
+            virtual void Attack(Pokemon* target) override;
+
             private:
-            void waterGun(Pokemon &target);
+            void waterGun(Pokemon* target);
         };
     }
 }

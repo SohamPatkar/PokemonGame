@@ -11,10 +11,15 @@ namespace N_Pokemon
             Pokemon(100, "Caterpie", PokemonType::Grass);
         }
 
-        void Caterpie::bugBite(Pokemon &target)
+        void Caterpie::bugBite(Pokemon* target)
         {
             cout<<"You have been attacked with Bug Bite!"<<endl;
-            target.TakeDamage(20);
+            target->TakeDamage(20);
+        }
+
+        void Caterpie::Attack(Pokemon* target)
+        {
+            bugBite(target);
         }
     }
 }

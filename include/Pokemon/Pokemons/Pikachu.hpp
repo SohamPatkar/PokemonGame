@@ -9,9 +9,10 @@ namespace N_Pokemon
         {
             public:
             Pikachu();
+            virtual void Attack(Pokemon* target) override;
 
             private:
-            void thunderBolt(Pokemon &target);
+            void thunderBolt(Pokemon* target);
         };
     }
 }

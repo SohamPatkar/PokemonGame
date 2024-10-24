@@ -11,10 +11,15 @@ namespace N_Pokemon
             Pokemon(100, "Squirtle", PokemonType::Water);
         }
 
-        void Squirtle::waterGun(Pokemon &target)
+        void Squirtle::waterGun(Pokemon* target)
         {
             cout<<"You have been attacked with Water Gun!"<<endl;
-            target.TakeDamage(20);
+            target->TakeDamage(20);
+        }
+
+        void Squirtle::Attack(Pokemon* target)
+        {
+            waterGun(target);
         }
     }
 }

@@ -9,9 +9,10 @@ namespace N_Pokemon
         {
             public:
             Caterpie();
-            
+            virtual void Attack(Pokemon* target) override;
+
             private:
-            void bugBite(Pokemon &target);
+            void bugBite(Pokemon* target);
         };
     }
 }

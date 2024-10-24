@@ -11,10 +11,15 @@ namespace N_Pokemon
             Pokemon(100, "Pidgey", PokemonType::Normal);
         }
 
-        void Pidgey::wingAtttack(Pokemon &target)
+        void Pidgey::wingAttack(Pokemon* target)
         {
             cout<<"You have been attacked with Wing Attack!"<<endl;
-            target.TakeDamage(20);
+            target->TakeDamage(20);
+        }
+
+        void Pidgey::Attack(Pokemon* target)
+        {
+            wingAttack(target);
         }
     }
 }
