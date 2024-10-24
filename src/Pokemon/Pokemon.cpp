@@ -32,6 +32,11 @@ namespace N_Pokemon
         }
     }
 
+    int Pokemon::getHealth()
+    {
+        return health;
+    }
+
     void Pokemon::Attack(Pokemon* target)
     {
         int damage = attackPower;
