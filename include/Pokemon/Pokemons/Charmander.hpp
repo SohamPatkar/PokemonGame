@@ -5,13 +5,14 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Charmander : Pokemon
+        class Charmander : public Pokemon
         {
             public:
             Charmander();
+            virtual void Attack(Pokemon* target) override;
             
             private:
-            void flameBurst(Pokemon &target);
+            void flameBurst(Pokemon* target);
         };
     }
 }

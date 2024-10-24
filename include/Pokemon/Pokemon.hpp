@@ -20,7 +20,7 @@ namespace N_Pokemon
         void heal();
         bool isFainted();
         void TakeDamage(int damage);
-        void Attack(Pokemon &pokemonattacked);
+        virtual void Attack(Pokemon *pokemonattacked);
         
         Pokemon();
         Pokemon(int _health, string _name, PokemonType _type);

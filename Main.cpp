@@ -9,18 +9,20 @@ using namespace std;
 
 int main()
 {
-    N_Pokemon::Pokemon charmander = N_Pokemon::Pokemon(100, "Charmander", N_Pokemon::PokemonType::Fire);
+    N_Player::Player* player = new N_Player::Player("Ash");
 
-    N_Player::Player player("Ash", charmander);
-
-    N_Character::ProfessorOak professor;
+    N_Character::ProfessorOak* professor = new N_Character::ProfessorOak();
     
-    N_Main::Game game;
+    N_Main::Game* game = new N_Main::Game();
 
-    professor.greetPlayer(player);
-    professor.offerPokemonChoices(player);
-    professor.explainMainQuest(player);
-    game.gameLoop(player);
+    professor->greetPlayer(player);
+    professor->offerPokemonChoices(player);
+    professor->explainMainQuest(player);
+    game->gameLoop(player);
+
+    delete player;
+    delete professor;
+    delete game;
 
     return 0;
 }

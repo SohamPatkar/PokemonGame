@@ -11,10 +11,15 @@ namespace N_Pokemon
             Pokemon(100, "Pikachu", PokemonType::Electric);
         }
 
-        void Pikachu::thunderBolt(Pokemon &target)
+        void Pikachu::thunderBolt(Pokemon* target)
         {
             cout<<"You have been attacked with Thunderbolt!"<<endl;
-            target.TakeDamage(20);
+            target->TakeDamage(20);
+        }
+
+        void Pikachu::Attack(Pokemon* target)
+        {
+            thunderBolt(target);
         }
     }
 }

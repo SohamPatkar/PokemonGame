@@ -7,14 +7,14 @@ using namespace N_Utility;
 
 namespace N_Battle
 {
-    void BattleManager::startBattle(N_Player::Player &player, N_Pokemon::Pokemon &wildPokemon) 
+    void BattleManager::startBattle(N_Player::Player* player, N_Pokemon::Pokemon* wildPokemon) 
     {
-        battleState.playerPokemon = &player._pokemonChosen;
-        battleState.wildPokemon = &wildPokemon;
+        battleState.playerPokemon = player->_pokemonChosen;
+        battleState.wildPokemon = wildPokemon;
         battleState.playerTurn = true;
         battleState.battleOngoing = true;
-        cout << "A wild " << wildPokemon.name << " appeared!\n";
-        battle(player._pokemonChosen, wildPokemon);
+        cout << "A wild " << wildPokemon->name << " appeared!\n";
+        battle(player->_pokemonChosen, wildPokemon);
     }     
 
     void BattleManager::updateState()
@@ -29,19 +29,19 @@ namespace N_Battle
         }
     }
 
-    void BattleManager::battle(N_Pokemon::Pokemon &playerPokemon, N_Pokemon::Pokemon &wildPokemon)
+    void BattleManager::battle(N_Pokemon::Pokemon* playerPokemon, N_Pokemon::Pokemon* wildPokemon)
     {
-        cout << "A wild " << wildPokemon.name << " appeared!\n";
+        cout << "A wild " << wildPokemon->name << " appeared!\n";
         
         while (battleState.battleOngoing) 
         {
             if(battleState.playerTurn)
             {
-                battleState.playerPokemon->Attack(*battleState.wildPokemon);
+                battleState.playerPokemon->Attack(battleState.wildPokemon);
             }
             else
             {
-                battleState.wildPokemon->Attack(*battleState.playerPokemon);
+                battleState.wildPokemon->Attack(battleState.playerPokemon);
             }
             updateState();
             battleState.playerTurn = !battleState.playerTurn;

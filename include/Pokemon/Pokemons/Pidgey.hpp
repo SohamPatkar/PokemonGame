@@ -5,13 +5,14 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Pidgey : Pokemon
+        class Pidgey : public Pokemon
         {
             public:
             Pidgey();
-            
+            virtual void Attack(Pokemon* target) override;
+
             private:
-            void wingAtttack(Pokemon &target);
+            void wingAttack(Pokemon* target);
         };
     }
 }

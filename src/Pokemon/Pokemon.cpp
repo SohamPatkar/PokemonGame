@@ -32,11 +32,11 @@ namespace N_Pokemon
         }
     }
 
-    void Pokemon::Attack(Pokemon &target)
+    void Pokemon::Attack(Pokemon* target)
     {
         int damage = attackPower;
-        cout<<name<< " attacks " << target.name << " for " << damage << " damage!\\n";
-        target.TakeDamage(damage);
+        cout<<name<< " attacks " << target->name << " for " << damage << " damage!\\n";
+        target->TakeDamage(damage);
     }
 
     Pokemon::Pokemon(int _health, string _name, PokemonType _type)
