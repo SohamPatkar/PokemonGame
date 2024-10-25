@@ -9,7 +9,7 @@ namespace N_Pokemon
         {
             public:
             Bulbasaur();
-            virtual void Attack(Pokemon* target) override;
+            virtual void Attack(Move selectedMove, Pokemon* target) override;
 
             private:
             void vineWhip(Pokemon* target);
