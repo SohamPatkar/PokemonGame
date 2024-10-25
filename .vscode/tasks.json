@@ -22,6 +22,7 @@
                 "E:/C++projects/PokemonGame/src/Pokemon/Pokemons/Squirtle.cpp",
                 "E:/C++projects/PokemonGame/src/Pokemon/Pokemons/Charmander.cpp",
                 "E:/C++projects/PokemonGame/src/Pokemon/Pokemons/Bulbasaur.cpp",
+                "E:/C++projects/PokemonGame/src/Pokemon/ParalyzedEffect.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

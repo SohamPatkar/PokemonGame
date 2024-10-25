@@ -1,5 +1,6 @@
 #include"../../../include/Pokemon/Pokemons/Pikachu.hpp"
 #include"../../../include/Pokemon/PokemonType.hpp"
+#include"../../../include/Pokemon/StatusEffects.hpp"
 #include"../../../include/Pokemon/Move.hpp"
 #include <iostream>
 
@@ -33,6 +34,10 @@ namespace N_Pokemon
 
             if(selectedMove.name == "ThunderBolt")
             {
+                if(target->canApplyEffect())
+                {
+                     target->applyEffect(N_StatusEffects::StatusEffectsType::PARALYZED);
+                }
                 int secondHitChance = rand() % 2;
             
                 if (secondHitChance == 1)
