@@ -1,14 +1,23 @@
 #pragma once
-#include "./Pokemon.hpp"
+#include"./Pokemon.hpp"
 #include<iostream>
 
-class IstatusEffect
+namespace N_Pokemon
 {
-    virtual void applyEffect(N_Pokemon::Pokemon* target);
+    class Pokemon;
 
-    virtual std::string getEffectName();
+    namespace N_StatusEffects
+    {
+        class IStatusEffect
+        {
+            public:
+            virtual void applyEffect(Pokemon* target);
 
-    virtual bool turnEndEffect(N_Pokemon::Pokemon* target);
+            virtual std::string getEffectName();
 
-    virtual void clearEffect(N_Pokemon::Pokemon* target);
-};
+            virtual bool turnEndEffect(Pokemon* target);
+
+            virtual void clearEffect(Pokemon* target);
+        };    
+    }
+}

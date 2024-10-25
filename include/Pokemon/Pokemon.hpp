@@ -1,5 +1,7 @@
 #pragma once
 #include"../../include/Pokemon/Move.hpp"
+#include"./IstatusEffect.hpp"
+#include"./StatusEffects.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -17,6 +19,7 @@ namespace N_Pokemon
         int attackPower = 25;
         PokemonType _typeofPokemon;
         vector<Move> moveList;
+        N_StatusEffects::IStatusEffect* appliedEffect;
 
         
         string name;
@@ -26,6 +29,10 @@ namespace N_Pokemon
         virtual void Attack(Move selectedMove, Pokemon *pokemonattacked);
         void selectAndUseMove(Pokemon* target);
         void wildPokemonAttack(Pokemon *target);
+        void applyEffect(N_StatusEffects::StatusEffectsType effectToApply);
+        void clearEffect();
+        bool canAttack();
+        bool canApplyEffect();
 
         int getHealth();
         

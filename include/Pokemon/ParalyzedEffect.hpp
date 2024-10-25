@@ -3,14 +3,21 @@
 #include "./IstatusEffect.hpp"
 #include <iostream>
 
-class ParalyzedEffect : public IstatusEffect
+namespace N_Pokemon
 {
-    private:
-    int turnsLeft;
+    namespace N_StatusEffects
+    {
+        class ParalyzedEffect : public IStatusEffect
+        {
+            private:
+            int turnsLeft;
 
-    public:
-    virtual void applyEffect(N_Pokemon::Pokemon* target) override; 
-    virtual std::string getEffectName() override;
-    virtual bool turnEndEffect(N_Pokemon::Pokemon* target) override;
-    virtual void clearEffect(N_Pokemon::Pokemon* target) override;
-};
+            public:
+            virtual void applyEffect(N_Pokemon::Pokemon* target) override; 
+            virtual std::string getEffectName() override;
+            virtual bool turnEndEffect(N_Pokemon::Pokemon* target) override;
+            virtual void clearEffect(N_Pokemon::Pokemon* target) override;
+        };
+    }
+}
+

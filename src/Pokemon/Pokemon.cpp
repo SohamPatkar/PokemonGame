@@ -2,10 +2,13 @@
 #include"../../include/Pokemon/PokemonType.hpp"
 #include"../../include/Pokemon/Move.hpp"
 #include"../../include/Utility/Utility.hpp"
+#include"../../include/Pokemon/IstatusEffect.hpp"
+#include"../../include/Pokemon/StatusEffects.hpp"
+#include"../../include/Pokemon/ParalyzedEffect.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
-using namespace N_Pokemon;
+
 
 namespace N_Pokemon
 {
@@ -52,6 +55,46 @@ namespace N_Pokemon
         health = _health;
         name = _name;
         _typeofPokemon = _type;
+        appliedEffect = nullptr;
+    }
+
+    bool Pokemon::canAttack()
+    {
+        if(appliedEffect == nullptr)
+        {
+            return true;
+        }
+        else
+        {
+            return appliedEffect->turnEndEffect(this);
+        }   
+    }
+
+    void Pokemon::applyEffect(N_StatusEffects::StatusEffectsType effectToApply)
+    {
+        switch (effectToApply)
+        {
+            case N_StatusEffects::StatusEffectsType::PARALYZED:
+                appliedEffect = new N_StatusEffects::ParalyzedEffect();
+                appliedEffect->applyEffect(this);
+            break;
+
+            default:
+                appliedEffect = nullptr;
+            break;
+        }
+    }    
+
+    bool Pokemon::canApplyEffect()
+    {
+        if(appliedEffect == nullptr)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     void Pokemon::printAvailableMoves()
@@ -106,6 +149,11 @@ namespace N_Pokemon
         Move selectedMove = moveList[choice-1];
         
         useMove(selectedMove, target);
+    }
+
+    void Pokemon::clearEffect()
+    {
+        appliedEffect = nullptr;
     }
 
     void Pokemon::wildPokemonAttack(Pokemon* target)

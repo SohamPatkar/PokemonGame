@@ -1,44 +1,50 @@
 #include "../../include/Pokemon/ParalyzedEffect.hpp"
+#include "../../include/Pokemon/Pokemon.hpp"
 #include<iostream>
 using namespace std;
 
-void ParalyzedEffect::applyEffect(N_Pokemon::Pokemon* target)
+namespace N_Pokemon
 {
-    cout << target->name << " is paralyzed!"<<endl;
-
-    turnsLeft = rand() % 3 + 1;
-}
-
-string ParalyzedEffect::getEffectName()
-{
-    return "Paralyzed";
-}
-
-bool ParalyzedEffect::turnEndEffect(N_Pokemon::Pokemon* target)
-{
-    if(turnsLeft <= 0)
+    namespace N_StatusEffects
     {
-        clearEffect(target);
-        return true;
-    }
-    turnsLeft--;
+        void ParalyzedEffect::applyEffect(N_Pokemon::Pokemon* target)
+        {
+            cout << target->name << " is paralyzed!"<<endl;
 
-    int paralysis_chance = rand() % 4; 
+            turnsLeft = rand() % 3 + 1;
+        }
 
-    if(paralysis_chance == 0)
-    {
-        cout<<"Pokemon Paralyzed!"<<endl;
-        return false;
-    }
-    else
-    {
-        cout<<"Pokemon not Paralyzed!"<<endl;
-        return true;
+        string ParalyzedEffect::getEffectName()
+        {
+            return "Paralyzed";
+        }
+
+        bool ParalyzedEffect::turnEndEffect(N_Pokemon::Pokemon* target)
+        {
+            if(turnsLeft <= 0)
+            {
+                clearEffect(target);
+                return true;
+            }
+            turnsLeft--;
+
+            int paralysis_chance = rand() % 4; 
+
+            if(paralysis_chance == 0)
+            {
+                cout<<"Pokemon Paralyzed!"<<endl;
+                return false;
+            }
+
+            cout<<"Pokemon not Paralyzed!"<<endl;
+            return true;      
+        }
+
+        void ParalyzedEffect::clearEffect(N_Pokemon::Pokemon* target)
+        {
+            cout<<"Pokemon is not paralyzed anymore"<<endl;
+            target->clearEffect();
+        }
     }
 }
 
-void ParalyzedEffect::clearEffect(N_Pokemon::Pokemon* target)
-{
-    cout<<"Pokemon is not paralyzed anymore"<<endl;
-    target->
-}
