@@ -19,7 +19,7 @@ namespace N_Main
             "Forest",
             {
                 N_Pokemons::Pidgey(),
-                N_Pokemon::Pokemon(50, "Pikachu", N_Pokemon::PokemonType::Electric)
+                N_Pokemons::Zubat()
             },
             70
         };

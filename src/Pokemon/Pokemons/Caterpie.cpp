@@ -1,5 +1,6 @@
 #include"../../../include/Pokemon/Pokemons/Caterpie.hpp"
 #include"../../../include/Pokemon/PokemonType.hpp"
+#include"../../../include/Pokemon/Move.hpp"
 #include <iostream>
 
 namespace N_Pokemon
@@ -8,7 +9,7 @@ namespace N_Pokemon
     {
         Caterpie::Caterpie()
         {
-            Pokemon(100, "Caterpie", PokemonType::Grass);
+            Pokemon(100, "Caterpie", PokemonType::Grass, {N_Pokemon::Move("GooSpit", 25), N_Pokemon::Move("BugBite", 15)});
         }
 
         void Caterpie::bugBite(Pokemon* target)
@@ -26,9 +27,24 @@ namespace N_Pokemon
             }
         }
 
-        void Caterpie::Attack(Pokemon* target)
+        void Caterpie::Attack(Move selectedMove, Pokemon* target)
         {
-            bugBite(target);
+            selectAndUseMove(target);
+
+            if(selectedMove.name == "GooSpit")
+            {
+                int secondHitChance = rand() % 2;
+            
+                if (secondHitChance == 1)
+                {
+                    Pokemon::Attack(selectedMove, target);
+                    cout << name << " hits again with a second " << selectedMove.name << "!\n";
+                }
+                else
+                {
+                    cout << target->name << " dodged the second hit!\n";
+                }     
+            }
         }
     }
 }
